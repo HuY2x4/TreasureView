@@ -1,0 +1,96 @@
+/************************* 初始样式 *************************/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+
+/************************* 主题样式 *************************/
+
+@color-theme-dark: #232644;
+@color-theme-bright: #e06410;
+@color-theme-gray: #e9e9e9;
+
+/************************* 通用样式 *************************/
+
+// 阴影
+.index_shadow {
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.07);
+}
+// 滚动条
+.index_scrollbar {
+  &::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background-color: #e1e5ea;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #445279;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #445279;
+  }
+  &::-webkit-scrollbar-thumb:active {
+    border: 0;
+    background-color: #445279;
+  }
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background-color: #445279;
+  }
+  &::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+}
+
+/************************* 兼容样式 *************************/
+
+.flex {
+  display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+  display: -moz-box; /* Firefox 17- */
+  display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+  display: -moz-flex; /* Firefox 18+ */
+  display: -ms-flexbox; /* IE 10 */
+  display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+}
+
+.direction(@type:row) {
+  -webkit-flex-direction: @type;
+  -moz-flex-direction: @type;
+  -ms-flex-direction: @type;
+  -o-flex-direction: @type;
+  flex-direction: @type;
+}
+
+.align(@type) {
+  -webkit-box-align: @type;
+  -ms-flex-align: @type;
+  -webkit-align-items: @type;
+  align-items: @type;
+}
+
+.justify(@type) {
+  -webkit-box-pack: @type;
+  -ms-flex-pack: @type;
+  -webkit-justify-content: @type;
+  justify-content: @type;
+}
+
+.wrap(@type) {
+  -webkit-flex-wrap: @type;
+  -moz-flex-wrap: @type;
+  -ms-flex-wrap: @type;
+  -o-flex-wrap: @type;
+  flex-wrap: @type;
+}
+
+.transform(@attr) {
+  -webkit-transform: @attr;
+  -moz-transform: @attr;
+  -o-transform: @attr;
+  -ms-transform: @attr;
+  transform: @attr;
+}

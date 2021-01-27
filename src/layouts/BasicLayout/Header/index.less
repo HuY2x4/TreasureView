@@ -1,0 +1,52 @@
+@import '~@/global.less';
+@bar-height: 64px;
+
+// 通用 - 三种状态
+.topBar {
+  width: 100%;
+  height: @bar-height;
+  position: fixed;
+
+  .logo_wrap {
+    display: inline-block;
+    width: 100px;
+    height: @bar-height;
+    line-height: @bar-height;
+    margin-left: 24px;
+    margin-right: 40px;
+  }
+
+  .pageList {
+    display: inline-block;
+
+    .pageList_item {
+      display: inline-block;
+      width: 50px;
+      height: @bar-height;
+      line-height: @bar-height;
+      cursor: pointer;
+    }
+  }
+}
+// 全透明状态
+.topBar_opacity {
+  .pageList_item {
+    color: @color-theme-bright;
+  }
+}
+
+// 半透明状态
+.topBar_halfOpac {
+  opacity: 0.5;
+}
+
+// 实体状态
+.topBar_normal {
+  .index_shadow;
+  background: #fff;
+}
+
+.topBar_holder {
+  width: 100%;
+  height: 48px;
+}

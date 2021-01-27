@@ -2,6 +2,6 @@ import React, { Component } from 'react';
 
 export default class index extends Component {
   render() {
-    return <div>this is comp</div>;
+    return <div style={{ height: 1200 }}>this is comp</div>;
   }
 }

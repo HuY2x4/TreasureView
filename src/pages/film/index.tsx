@@ -2,6 +2,6 @@ import React, { Component } from 'react';
 
 export default class Film extends Component {
   render() {
-    return <div>this is index</div>;
+    return <div style={{ height: 1200 }}>this is index</div>;
   }
 }
