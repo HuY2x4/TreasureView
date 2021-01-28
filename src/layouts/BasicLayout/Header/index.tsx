@@ -99,7 +99,9 @@ class Header extends Component<Props> {
             </li>
           </ul>
         </div>
-        {['film'].includes(curPage) && <div className={styles.topBar_holder} />}
+        {!['film'].includes(curPage) && (
+          <div className={styles.topBar_holder} />
+        )}
       </>
     );
   }

@@ -1,17 +1,21 @@
 @import '~@/global.less';
-@bar-height: 64px;
 
 // 通用 - 三种状态
 .topBar {
   width: 100%;
-  height: @bar-height;
+  height: @topbar-height;
   position: fixed;
+  z-index: 999;
+  .transition(all 0.5s);
+  &:hover {
+    opacity: 1;
+  }
 
   .logo_wrap {
     display: inline-block;
     width: 100px;
-    height: @bar-height;
-    line-height: @bar-height;
+    height: @topbar-height;
+    line-height: @topbar-height;
     margin-left: 24px;
     margin-right: 40px;
   }
@@ -22,8 +26,8 @@
     .pageList_item {
       display: inline-block;
       width: 50px;
-      height: @bar-height;
-      line-height: @bar-height;
+      height: @topbar-height;
+      line-height: @topbar-height;
       cursor: pointer;
     }
   }
@@ -46,7 +50,8 @@
   background: #fff;
 }
 
+// 用实体撑起
 .topBar_holder {
   width: 100%;
-  height: 48px;
+  height: @topbar-height;
 }

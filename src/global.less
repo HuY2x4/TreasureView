@@ -8,6 +8,11 @@ ul {
   list-style: none;
 }
 
+/************************* 布局样式 *************************/
+
+@topbar-height: 64px;
+@sidebar-width: 300px;
+
 /************************* 主题样式 *************************/
 
 @color-theme-dark: #232644;
@@ -93,4 +98,11 @@ ul {
   -o-transform: @attr;
   -ms-transform: @attr;
   transform: @attr;
+}
+
+.transition(@attr) {
+  -webkit-transition: @attr;
+  -moz-transition: @attr;
+  -o-transition: @attr;
+  transition: @attr;
 }

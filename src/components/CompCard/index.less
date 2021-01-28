@@ -1,0 +1,49 @@
+@import '~@/global.less';
+
+@card_height: 300px;
+@titleBar_height: 30px;
+@operation_height: 30px;
+@content_height: calc(~'100% - @{titleBar_height} - @{operation_height}');
+
+.wrap {
+  width: 100%;
+  height: @card_height;
+  border: 1px solid #f0f0f0;
+}
+
+.title {
+  width: 100%;
+  height: @titleBar_height;
+  line-height: @titleBar_height;
+  position: relative;
+  margin-left: 20px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    height: 1px;
+    background: #f0f0f0;
+  }
+}
+
+.content {
+  height: @content_height;
+  .flex;
+  .align(center);
+  .justify(center);
+}
+
+.operation {
+  height: @operation_height;
+  width: 100%;
+  padding-right: 20px;
+
+  .icon {
+    float: right;
+    cursor: pointer;
+    color: #a1a1a1;
+  }
+}

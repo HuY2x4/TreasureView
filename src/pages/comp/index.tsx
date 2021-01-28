@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
-
-export default class index extends Component {
+import Menu from './menu';
+import Content from './content';
+import styles from './index.less';
+export default class Comp extends Component {
   render() {
-    return <div style={{ height: 1200 }}>this is comp</div>;
+    return (
+      <div className={styles.wrap}>
+        <div className={styles.side}>
+          <Menu />
+        </div>
+        <div className={styles.content}>
+          <Content />
+        </div>
+      </div>
+    );
   }
 }

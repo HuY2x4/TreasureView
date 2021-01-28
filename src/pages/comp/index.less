@@ -1,0 +1,13 @@
+@import '~@/global.less';
+
+.side {
+  float: left;
+  position: fixed;
+  width: @sidebar-width;
+  height: calc(100vh - @topbar-height);
+}
+.content {
+  margin-left: @sidebar-width;
+  min-height: calc(100vh - @topbar-height);
+  background-color: #fff;
+}
