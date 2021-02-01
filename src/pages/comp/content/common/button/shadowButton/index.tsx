@@ -7,7 +7,7 @@ export default function shadowButton(props: Props) {
 
   return (
     <div>
-      <button>222</button>
+      <button>222222</button>
     </div>
   );
 }

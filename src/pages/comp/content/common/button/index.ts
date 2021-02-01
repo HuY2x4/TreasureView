@@ -1,9 +1,10 @@
 import shadowButton from './shadowButton';
-const PRE_PATH = '/common/button/';
+import loadable from '@/utils/loadable';
+
 export default [
   {
     name: '按钮',
     span: 6,
-    path: PRE_PATH + 'shadowButton',
+    node: loadable(() => import(`./shadowButton`)),
   },
 ];

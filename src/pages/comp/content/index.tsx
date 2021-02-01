@@ -11,7 +11,7 @@ export default class Content extends Component {
           {common_button.map((val, index) => {
             return (
               <Col key={index} span={val.span} className={styles.card_wrap}>
-                <CompCard title={val.name} path={val.path} />
+                <CompCard title={val.name} node={val.node} />
               </Col>
             );
           })}
