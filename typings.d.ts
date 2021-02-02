@@ -9,3 +9,4 @@ declare module '*.svg' {
   export default url;
 }
 declare module 'react-loadable';
+declare module '*.scss';

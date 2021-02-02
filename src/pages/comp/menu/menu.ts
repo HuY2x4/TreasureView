@@ -4,17 +4,17 @@ export const MENUS = [
     childs: [
       {
         name: '按钮',
-        size: 3,
+        size: 4,
         key: 'button',
         path: '?type=button',
         typeData: require('../content/common/button').default,
       },
       {
-        name: '按钮',
-        size: 0,
-        key: 'button2',
-        path: '?type=button2',
-        typeData: require('../content/common/button').default,
+        name: '文本',
+        size: 4,
+        key: 'text',
+        path: '?type=text',
+        typeData: require('../content/common/text').default,
       },
     ],
   },

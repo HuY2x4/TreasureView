@@ -31,4 +31,7 @@ export default defineConfig({
     immer: true,
     hmr: false,
   },
+  sass: {
+    implementation: require('node-sass'),
+  },
 });
