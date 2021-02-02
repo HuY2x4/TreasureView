@@ -1,7 +1,7 @@
 import { Effect, Model } from 'dva';
 export const PAGE_ROUTE: any = {
   film: '/',
-  component: '/components',
+  components: '/components',
   new: '/new',
 };
 const layoutModel: Model = {
@@ -29,7 +29,6 @@ const layoutModel: Model = {
     initRoute({ dispatch, history }) {
       return history.listen(({ pathname }) => {
         // 待优化 - 看的乱
-        console.log('pathname:', pathname);
         if (!!pathname) {
           let cur_page = 'film';
           if (pathname !== '/') {

@@ -6,6 +6,7 @@
 }
 ul {
   list-style: none;
+  margin: 0;
 }
 
 /************************* 布局样式 *************************/
@@ -105,4 +106,29 @@ ul {
   -moz-transition: @attr;
   -o-transition: @attr;
   transition: @attr;
+}
+
+.animation(@attr) {
+  animation: @attr;
+  -moz-animation: @attr;
+  -webkit-animation: @attr;
+  -o-animation: @attr;
+}
+
+.keyframes (@name, @frames) {
+  @-webkit-keyframes @name {
+    @frames();
+  }
+  @-moz-keyframes @name {
+    @frames();
+  }
+  @-ms-keyframes @name {
+    @frames();
+  }
+  @-o-keyframes @name {
+    @frames();
+  }
+  @keyframes @name {
+    @frames();
+  }
 }

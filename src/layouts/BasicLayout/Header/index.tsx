@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
-import { connect } from 'dva';
-import { history } from 'umi';
+// import { connect } from 'dva';
+import { Dispatch, history, ConnectProps, connect } from 'umi';
 import { PAGE_ROUTE } from '@/models/layout';
 import styles from './index.less';
 
-interface Props extends ConnectProps {
-  curPage: string;
-}
+export const TOP_MENU: any = {
+  film: {
+    name: '组件',
+    path: '/',
+    footerVisible: true,
+  },
+  components: {
+    name: '组件2',
+    path: '/components',
+    footerVisible: false,
+  },
+  skills: {
+    name: '组件3',
+    path: '/skills',
+    footerVisible: false,
+  },
+};
 
-@connect((state) => ({
+const _connect: any = connect;
+@_connect((state: any) => ({
   curPage: state.layout.curPage,
 }))
-class Header extends Component<Props> {
+class Header extends Component<any> {
   state = {
     barStatus: 'opcatiy', // opcatiy全透明、half半透明、normal实体
   };
@@ -85,18 +100,17 @@ class Header extends Component<Props> {
         <div className={`${styles.topBar} ${TOPBAR_STYLES[barStatus]}`}>
           <div className={styles.logo_wrap}>Treause</div>
           <ul className={styles.pageList}>
-            <li
-              className={styles.pageList_item}
-              onClick={this.handleRouter.bind(this, '/')}
-            >
-              组件
-            </li>
-            <li
-              className={styles.pageList_item}
-              onClick={this.handleRouter.bind(this, '/components')}
-            >
-              组件2
-            </li>
+            {Object.keys(TOP_MENU).map((key, index) => {
+              return (
+                <li
+                  key={index}
+                  className={styles.pageList_item}
+                  onClick={this.handleRouter.bind(this, TOP_MENU[key].path)}
+                >
+                  {TOP_MENU[key].name}
+                </li>
+              );
+            })}
           </ul>
         </div>
         {!['film'].includes(curPage) && (

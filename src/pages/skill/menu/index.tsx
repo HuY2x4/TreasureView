@@ -7,17 +7,17 @@ import styles from './index.less';
 
 const _connect: any = connect;
 @_connect((state: any) => ({
-  curType: state.components.curType,
+  curType: state.skills.curType,
 }))
 class menu extends Component<any> {
   goDetail = (item: any) => {
     this.props.dispatch({
-      type: 'components/save',
+      type: 'skills/save',
       payload: {
         curType: item.key,
       },
     });
-    history.push('/components' + item.path);
+    history.push('/skills' + item.path);
   };
   render() {
     const { curType } = this.props;
@@ -31,21 +31,15 @@ class menu extends Component<any> {
                 <div className={styles.types_wrap}>
                   {val.childs.map((item, itemIndex) => {
                     return (
-                      <Badge
+                      <div
                         key={itemIndex}
-                        count={item.size}
-                        offset={[-10, 3]}
-                        size="small"
+                        className={`${styles.type} ${
+                          curType == item.key && styles.type_choose
+                        }`}
+                        onClick={this.goDetail.bind(this, item)}
                       >
-                        <span
-                          className={`${styles.type} ${
-                            item.key === curType && styles.type_choose
-                          }`}
-                          onClick={this.goDetail.bind(this, item)}
-                        >
-                          {item.name}
-                        </span>
-                      </Badge>
+                        {item.name}
+                      </div>
                     );
                   })}
                 </div>

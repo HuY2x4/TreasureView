@@ -9,8 +9,20 @@ export default defineConfig({
       path: '/',
       component: '@/layouts/BasicLayout',
       routes: [
-        { path: '/', component: '@/pages/film' },
-        { path: '/components', component: '@/pages/comp' },
+        {
+          path: '/',
+          component: '@/pages/film',
+        },
+        {
+          path: '/components',
+          component: '@/pages/comp',
+          routes: [],
+        },
+        {
+          path: '/skills',
+          component: '@/pages/skill',
+          routes: [],
+        },
       ],
     },
   ],

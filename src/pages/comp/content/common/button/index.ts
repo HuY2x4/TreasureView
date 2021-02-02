@@ -1,4 +1,3 @@
-import shadowButton from './shadowButton';
 import loadable from '@/utils/loadable';
 
 export default [

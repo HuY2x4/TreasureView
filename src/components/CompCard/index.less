@@ -15,6 +15,8 @@
   width: 100%;
   height: @titleBar_height;
   line-height: @titleBar_height;
+  font-size: 15px;
+  font-weight: 600;
   position: relative;
   margin-left: 20px;
 
@@ -45,5 +47,19 @@
     float: right;
     cursor: pointer;
     color: #a1a1a1;
+
+    &_rotate {
+      .animation(rotate 0.5s ease);
+    }
   }
 }
+
+// 动画 - 自转圈
+.keyframes(rotate,{
+  0% {
+    .transform(rotate(0deg))
+  }
+  100% {
+    .transform(rotate(720deg))
+  }
+});
