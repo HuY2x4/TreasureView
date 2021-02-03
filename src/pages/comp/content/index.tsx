@@ -24,15 +24,63 @@ export default class Content extends Component<any> {
   render() {
     return (
       <div className={styles.wrap}>
-        <Row gutter={20}>
-          {this.getCurTypeData().map((val: any, index: number) => {
+        {/* {this.getCurTypeData().map((val: any, index: number) => {
             return (
               <Col key={index} span={val.span} className={styles.card_wrap}>
                 <CompCard title={val.name} node={val.node} />
               </Col>
             );
-          })}
-        </Row>
+          })} */}
+        {this.getCurTypeData().map((rowItem: any, rowIndex: number) => {
+          return (
+            <Row gutter={20} key={rowIndex}>
+              {rowItem.colChilds.map((colItem: any, colIndex: number) => {
+                return (
+                  <Col key={colIndex} span={colItem.span}>
+                    {colItem.rowChilds ? (
+                      <>
+                        {colItem.rowChilds.map(
+                          (innerColList: any, innerRowIndex: number) => {
+                            return (
+                              <Row gutter={20} key={innerRowIndex}>
+                                {innerColList.map(
+                                  (
+                                    innerColItem: any,
+                                    innerColIndex: number,
+                                  ) => {
+                                    return (
+                                      <Col
+                                        key={innerColIndex}
+                                        span={innerColItem.span}
+                                        className={styles.card_wrap}
+                                      >
+                                        <CompCard
+                                          title={innerColItem.name}
+                                          node={innerColItem.node}
+                                          cardHeight={1}
+                                        />
+                                      </Col>
+                                    );
+                                  },
+                                )}
+                              </Row>
+                            );
+                          },
+                        )}
+                      </>
+                    ) : (
+                      <CompCard
+                        title={colItem.name}
+                        node={colItem.node}
+                        cardHeight={rowItem.height}
+                      />
+                    )}
+                  </Col>
+                );
+              })}
+            </Row>
+          );
+        })}
       </div>
     );
   }

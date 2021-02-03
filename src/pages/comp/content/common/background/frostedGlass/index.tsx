@@ -4,13 +4,12 @@ import BackgroundBorad from '@/components/BackgroundBorad';
 export default class index extends Component {
   render() {
     return (
-      <BackgroundBorad background="#1a1e23">
-        <h1 className={`${styles.title} ${styles['slide-bar']}`}>
-          I'm alphardex.
-        </h1>
-        <p className={`${styles.subtitle} ${styles['slide-bar']}`}>
-          A CSS Wizard
-        </p>
+      <BackgroundBorad>
+        <div className={styles.wrap}>
+          <div className={styles['frosted-glass']}>
+            <h1 className={styles.title}>HuYx</h1>
+          </div>
+        </div>
       </BackgroundBorad>
     );
   }

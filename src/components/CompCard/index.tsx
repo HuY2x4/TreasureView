@@ -5,6 +5,7 @@ import { useStateCallback } from '@/utils/utils';
 interface Props {
   title: React.ReactNode;
   node: any;
+  cardHeight: number;
 }
 
 export default function CompCard(props: Props) {
@@ -33,10 +34,21 @@ export default function CompCard(props: Props) {
     });
   }
 
-  const { node: Node } = props;
+  function getCardHeightStyles(cardHeight: number) {
+    switch (cardHeight) {
+      case 1:
+        return styles.wrap_1height;
+      case 2:
+        return styles.wrap_2height;
+      default:
+        return styles.wrap_1height;
+    }
+  }
+
+  const { node: Node, cardHeight = 1 } = props;
 
   return (
-    <div className={styles.wrap}>
+    <div className={`${styles.wrap} ${getCardHeightStyles(cardHeight)}`}>
       <div className={styles.title}>{props.title}</div>
       <div className={styles.content}>{nodeVisible && <Node />}</div>
       <div className={styles.operation}>

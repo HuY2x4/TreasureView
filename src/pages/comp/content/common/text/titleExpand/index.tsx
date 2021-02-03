@@ -5,15 +5,13 @@ export default class TitleExpand extends Component {
   state = {
     text: 'this is my title',
   };
-  reRender = () => {
-    this.setState({ text: 'this is my title' });
-  };
+
   render() {
     let delay = 0.3;
     let letters = this.state.text.split('');
     let middle = letters.filter((e) => e !== '').length / 2;
     return (
-      <div className={styles.wrap} onClick={this.reRender}>
+      <BackgroundBorad background="#1a1e23">
         <div className={styles.title}>
           {letters.map((val, index) => {
             return (
@@ -28,7 +26,7 @@ export default class TitleExpand extends Component {
             );
           })}
         </div>
-      </div>
+      </BackgroundBorad>
     );
   }
 }

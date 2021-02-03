@@ -7,8 +7,15 @@
 
 .wrap {
   width: 100%;
-  height: @card_height;
   border: 1px solid #f0f0f0;
+
+  &_1height {
+    height: @card_height;
+  }
+
+  &_2height {
+    height: @card_height * 2 + 20px;
+  }
 }
 
 .title {
@@ -33,6 +40,7 @@
 
 .content {
   height: @content_height;
+  width: 100%;
   .flex;
   .align(center);
   .justify(center);

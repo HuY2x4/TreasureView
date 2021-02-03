@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import styles from './index.module.scss';
+import BackgroundBorad from '@/components/BackgroundBorad';
+
 export default class index extends Component {
   render() {
     return (
-      <div className={styles.wrap}>
+      <BackgroundBorad>
         <video
           autoplay
           muted
@@ -15,7 +17,7 @@ export default class index extends Component {
           <source src="http://thenewcode.com/assets/videos/ocean-small.mp4" />
         </video>
         <h1>ocean</h1>
-      </div>
+      </BackgroundBorad>
     );
   }
 }
