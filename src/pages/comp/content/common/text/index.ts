@@ -12,14 +12,26 @@ export default [
           [
             {
               //col
-              span: 24,
               name: '文本',
+              reference: [
+                {
+                  title: '我写CSS的常用套路-交错动画',
+                  url: 'https://juejin.cn/post/6844904033405108232#heading-1',
+                },
+              ],
+              span: 24,
               node: loadable(() => import(`./titleExpand`)),
             },
           ],
           [
             {
-              name: '文本',
+              name: '文本 - 定位有问题',
+              reference: [
+                {
+                  title: '我写CSS的常用套路-伪类和伪元素',
+                  url: 'https://juejin.cn/post/6844904033405108232#heading-10',
+                },
+              ],
               span: 24,
               node: loadable(() => import(`./headerSlideBar`)),
             },
@@ -28,8 +40,14 @@ export default [
       },
       {
         //col
+        name: '文本 - 可能兼容问题',
+        reference: [
+          {
+            title: '我写CSS的常用套路-CSS特性',
+            url: 'https://juejin.cn/post/6844904033405108232#heading-12',
+          },
+        ],
         span: 18,
-        name: '文本',
         node: loadable(() => import(`./videoMaskText`)),
       },
     ],
@@ -39,30 +57,15 @@ export default [
     colChilds: [
       {
         name: '文本',
+        reference: [
+          {
+            title: '我写CSS的常用套路-CSS特性',
+            url: 'https://juejin.cn/post/6844904033405108232#heading-12',
+          },
+        ],
         span: 6,
         node: loadable(() => import(`./glitchText`)),
       },
     ],
   },
-  // {
-  //   name: '文本',
-  //   span: 6,
-  //   node: loadable(() => import(`./titleExpand`)),
-  // },
-  // {
-  //   name: '文本',
-  //   span: 6,
-  //   node: loadable(() => import(`./headerSlideBar`)),
-  // },
-  // {
-  //   name: '文本',
-  //   span: 6,
-  //   node: loadable(() => import(`./glitchText`)),
-  // },
-  // {
-  //   name: '文本',
-  //   span: 12,
-  //   height: 2,
-  //   node: loadable(() => import(`./videoMaskText`)),
-  // },
 ];

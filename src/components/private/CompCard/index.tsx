@@ -1,11 +1,20 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import styles from './index.less';
-import { ReloadOutlined } from '@ant-design/icons';
+import { Tooltip } from 'antd';
+import { ReloadOutlined, LinkOutlined, TagOutlined } from '@ant-design/icons';
 import { useStateCallback } from '@/utils/utils';
+interface Ref {
+  title: string;
+  url: string;
+}
+
 interface Props {
   title: React.ReactNode;
   node: any;
   cardHeight: number;
+  remark?: string;
+  reference?: Array<Ref>;
+  hasConvert?: Boolean; // 是否完成组件化
 }
 
 export default function CompCard(props: Props) {
@@ -34,6 +43,7 @@ export default function CompCard(props: Props) {
     });
   }
 
+  // 自定义卡片的高度
   function getCardHeightStyles(cardHeight: number) {
     switch (cardHeight) {
       case 1:
@@ -45,11 +55,48 @@ export default function CompCard(props: Props) {
     }
   }
 
-  const { node: Node, cardHeight = 1 } = props;
+  // 获取 悬浮框 组件
+  function getToolTipComp(data: any, title: string) {
+    return (
+      <div className={styles.reference}>
+        <h4 className={styles.ref_title}>{title}：</h4>
+        <ul className={styles.ref_content}>
+          {title == '参考资料'
+            ? data.map((val: any, index: number) => {
+                return (
+                  <li key={index} className={styles.ref_item}>
+                    <span className={styles.dot} />
+                    <a href={val.url} target="_blank">
+                      {val.title}
+                    </a>
+                  </li>
+                );
+              })
+            : data}
+        </ul>
+      </div>
+    );
+  }
+  const { node: Node, cardHeight = 1, hasConvert } = props;
 
   return (
     <div className={`${styles.wrap} ${getCardHeightStyles(cardHeight)}`}>
-      <div className={styles.title}>{props.title}</div>
+      <div className={styles.topBar}>
+        <span className={styles.title}>{props.title}</span>
+
+        <div className={styles.intro}>
+          {props.remark && (
+            <Tooltip title={getToolTipComp(props.remark, '技术分析')}>
+              <TagOutlined className={styles.icon} />
+            </Tooltip>
+          )}
+          {props.reference && (
+            <Tooltip title={getToolTipComp(props.reference, '参考资料')}>
+              <LinkOutlined className={styles.icon} />
+            </Tooltip>
+          )}
+        </div>
+      </div>
       <div className={styles.content}>{nodeVisible && <Node />}</div>
       <div className={styles.operation}>
         <ReloadOutlined
@@ -57,6 +104,7 @@ export default function CompCard(props: Props) {
           onClick={reload}
         />
       </div>
+      {hasConvert && <div></div>}
     </div>
   );
 }

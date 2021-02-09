@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './index.module.scss';
-import BackgroundBorad from '@/components/BackgroundBorad';
+import BackgroundBorad from '@/components/private/BackgroundBorad';
 export default class index extends Component {
   random = (min, max) => {
     return min + Math.floor(Math.random() * (max - min + 1));
@@ -27,7 +27,6 @@ export default class index extends Component {
       const bar = <div className={styles.bar}></div>;
       barList.push(bar);
     }
-
     return (
       <BackgroundBorad background="#1a1e23">
         <h1 className={styles['cross-bar-glitch']} data-slice={sliceNum}>

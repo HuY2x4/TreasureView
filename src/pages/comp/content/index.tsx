@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 import { connect } from 'dva';
 import styles from './index.less';
-import CompCard from '@/components/CompCard';
+import CompCard from '@/components/private/CompCard';
 import { MENUS } from '../menu/menu';
 
 const _connect: any = connect;
@@ -24,17 +24,11 @@ export default class Content extends Component<any> {
   render() {
     return (
       <div className={styles.wrap}>
-        {/* {this.getCurTypeData().map((val: any, index: number) => {
-            return (
-              <Col key={index} span={val.span} className={styles.card_wrap}>
-                <CompCard title={val.name} node={val.node} />
-              </Col>
-            );
-          })} */}
         {this.getCurTypeData().map((rowItem: any, rowIndex: number) => {
           return (
             <Row gutter={20} key={rowIndex}>
               {rowItem.colChilds.map((colItem: any, colIndex: number) => {
+                console.log('colItem:', colItem);
                 return (
                   <Col key={colIndex} span={colItem.span}>
                     {colItem.rowChilds ? (
@@ -56,6 +50,8 @@ export default class Content extends Component<any> {
                                       >
                                         <CompCard
                                           title={innerColItem.name}
+                                          remark={innerColItem.remark}
+                                          reference={innerColItem.reference}
                                           node={innerColItem.node}
                                           cardHeight={1}
                                         />
@@ -71,6 +67,8 @@ export default class Content extends Component<any> {
                     ) : (
                       <CompCard
                         title={colItem.name}
+                        remark={colItem.remark}
+                        reference={colItem.reference}
                         node={colItem.node}
                         cardHeight={rowItem.height}
                       />

@@ -13,13 +13,18 @@
 
   .logo_wrap {
     display: inline-block;
-    width: 100px;
     font-size: 27px;
     font-weight: 600;
     height: @topbar-height;
     line-height: @topbar-height;
     margin-left: 40px;
     margin-right: 140px;
+    .inlineFlexCenter();
+
+    .logo {
+      cursor: pointer;
+      height: 42px;
+    }
   }
 
   .pageList {
@@ -33,6 +38,7 @@
       font-size: 15px;
       height: @topbar-height;
       line-height: @topbar-height;
+      font-weight: 600;
       cursor: pointer;
     }
   }
@@ -40,7 +46,10 @@
 // 全透明状态
 .topBar_opacity {
   .pageList_item {
-    color: @color-theme-bright;
+    color: #fff;
+  }
+  .logo_wrap {
+    color: #fff;
   }
 }
 
@@ -53,6 +62,9 @@
 .topBar_normal {
   .index_shadow;
   background: #fff;
+  .pageList_item {
+    // color: #fff;
+  }
 }
 
 // 用实体撑起

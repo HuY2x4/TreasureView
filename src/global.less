@@ -16,7 +16,7 @@ ul {
 
 /************************* 主题样式 *************************/
 
-@color-theme-dark: #232644;
+@color-theme-dark: #0e0b32;
 @color-theme-bright: #5564d5;
 @color-theme-gray: #e9e9e9;
 
@@ -61,6 +61,11 @@ ul {
   display: -moz-flex; /* Firefox 18+ */
   display: -ms-flexbox; /* IE 10 */
   display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+}
+
+.inline-flex {
+  display: -webkit-inline-flex; /*webkit*/
+  display: inline-flex;
 }
 
 .direction(@type:row) {
@@ -136,6 +141,12 @@ ul {
 /************************* 快捷样式 *************************/
 .flexCenter {
   .flex();
+  .justify(center);
+  .align(center);
+}
+
+.inlineFlexCenter {
+  .inline-flex();
   .justify(center);
   .align(center);
 }

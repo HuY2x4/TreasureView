@@ -8,6 +8,7 @@
 .wrap {
   width: 100%;
   border: 1px solid #f0f0f0;
+  position: relative;
 
   &_1height {
     height: @card_height;
@@ -18,23 +19,73 @@
   }
 }
 
-.title {
+.topBar {
   width: 100%;
   height: @titleBar_height;
-  line-height: @titleBar_height;
-  font-size: 15px;
-  font-weight: 600;
+
   position: relative;
-  margin-left: 20px;
+  padding: 0 20px;
 
   &::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 20px;
     width: calc(100% - 40px);
     height: 1px;
     background: #f0f0f0;
+  }
+
+  .title {
+    display: inline-block;
+    vertical-align: top;
+    line-height: @titleBar_height;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .intro {
+    display: inline-block;
+    float: right;
+
+    .icon {
+      cursor: pointer;
+      font-size: 15px;
+      margin-left: 8px;
+      margin-top: 8px;
+    }
+  }
+}
+
+.reference {
+  color: #fff;
+  .ref_title {
+    color: #fff;
+    margin-bottom: 0;
+  }
+  .ref_content {
+    display: block;
+    padding-left: 10px;
+  }
+  .ref_item {
+    .dot {
+    }
+    a {
+      color: #fff;
+      text-decoration: underline;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: -9px;
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background: #fff;
+      }
+    }
   }
 }
 

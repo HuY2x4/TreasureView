@@ -6,17 +6,17 @@ import styles from './index.less';
 
 export const TOP_MENU: any = {
   film: {
-    name: '组件',
+    name: '影视',
     path: '/',
     footerVisible: true,
   },
   components: {
-    name: '组件2',
+    name: '组件库',
     path: '/components',
     footerVisible: false,
   },
   skills: {
-    name: '组件3',
+    name: '技术学习',
     path: '/skills',
     footerVisible: false,
   },
@@ -98,7 +98,24 @@ class Header extends Component<any> {
     return (
       <>
         <div className={`${styles.topBar} ${TOPBAR_STYLES[barStatus]}`}>
-          <div className={styles.logo_wrap}>Treause</div>
+          <div
+            className={styles.logo_wrap}
+            onClick={this.handleRouter.bind(this, TOP_MENU['film'].path)}
+          >
+            {barStatus == 'opcatiy' ? (
+              <img
+                src={require('@/assets/layout/logo_white.png')}
+                alt=""
+                className={styles.logo}
+              />
+            ) : (
+              <img
+                src={require('@/assets/layout/logo_dark.png')}
+                alt=""
+                className={styles.logo}
+              />
+            )}
+          </div>
           <ul className={styles.pageList}>
             {Object.keys(TOP_MENU).map((key, index) => {
               return (
