@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './index.module.scss';
-import BackgroundBorad from '@/components/private/BackgroundBorad';
+import BackgroundBorad from '@/pages/comp/components/BackgroundBorad';
 export default class Snow extends Component {
   render() {
     const snowNum = 200; //和scss里对应

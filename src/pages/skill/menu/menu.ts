@@ -1,17 +1,22 @@
 import loadable from '@/utils/loadable';
 
+// 基础
+import { FONT_MENU, FONT_REFERENCE } from '../content/basis/font';
+
 export const MENUS = [
   {
-    name: '分类1',
+    type: '基础',
     childs: [
       {
-        name: '按钮1',
-        key: 'music',
-        path: '?type=music',
-        node: loadable(() => import('../content/media/music')),
+        title: '字体',
+        key: 'font',
+        path: '?type=font',
+        node: loadable(() => import('../content/basis/font')),
+        menu: FONT_MENU,
+        reference: FONT_REFERENCE,
       },
       {
-        name: '按钮2',
+        title: '按钮2',
         key: 'video',
         path: '?type=video',
         node: loadable(() => import('../content/media/video')),
@@ -19,10 +24,10 @@ export const MENUS = [
     ],
   },
   {
-    name: '布局组件',
+    type: '优化',
     childs: [
       {
-        name: '顶部栏',
+        title: '顶部栏',
         key: 'button3',
         path: '?type=button3',
         node: loadable(() => import('../content/media/video')),

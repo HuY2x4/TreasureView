@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 import { connect } from 'dva';
 import styles from './index.less';
-import CompCard from '@/components/private/CompCard';
+import CompCard from '@/pages/comp/components/CompCard';
 import { MENUS } from '../menu/menu';
 
 const _connect: any = connect;
@@ -28,7 +28,6 @@ export default class Content extends Component<any> {
           return (
             <Row gutter={20} key={rowIndex}>
               {rowItem.colChilds.map((colItem: any, colIndex: number) => {
-                console.log('colItem:', colItem);
                 return (
                   <Col key={colIndex} span={colItem.span}>
                     {colItem.rowChilds ? (

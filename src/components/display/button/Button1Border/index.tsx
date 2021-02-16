@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './index.less';
-import BackgroundBorad from '@/components/private/BackgroundBorad';
+import BackgroundBorad from '@/pages/comp/components/BackgroundBorad';
 //var()不兼容IE
 interface Props {
   text?: string;

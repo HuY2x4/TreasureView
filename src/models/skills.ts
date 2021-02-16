@@ -3,7 +3,7 @@ import { Effect, Model } from 'dva';
 const layoutModel: Model = {
   namespace: 'skills',
   state: {
-    curType: 'music',
+    curType: 'font',
   },
   effects: {
     *query({ payload }, { call, put }) {},
@@ -22,7 +22,7 @@ const layoutModel: Model = {
       return history.listen((location: any) => {
         dispatch({
           type: 'save',
-          payload: { curPage: location.query?.type || 'music' },
+          payload: { curPage: location.query?.type || 'font' },
         });
       });
     },

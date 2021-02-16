@@ -27,7 +27,7 @@ class menu extends Component<any> {
           {MENUS.map((val, index) => {
             return (
               <li key={index} className={styles.list_li}>
-                <h5 className={styles.title}>{val.name}</h5>
+                <h5 className={styles.title}>{val.type}</h5>
                 <div className={styles.types_wrap}>
                   {val.childs.map((item, itemIndex) => {
                     return (
@@ -38,7 +38,7 @@ class menu extends Component<any> {
                         }`}
                         onClick={this.goDetail.bind(this, item)}
                       >
-                        {item.name}
+                        {item.title}
                       </div>
                     );
                   })}
