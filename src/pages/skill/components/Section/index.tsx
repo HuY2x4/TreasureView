@@ -5,6 +5,7 @@ interface Props {
   title: string;
   level?: number;
   id?: string;
+  className?: string;
 }
 
 // 映射：段落等级-标题字体大小
@@ -17,10 +18,10 @@ export const LEVEL_FONT_SIZE: any = {
 };
 
 export default function (props: Props) {
-  const { level = 1, children, id } = props;
+  const { level = 1, children, id, className } = props;
 
   return (
-    <section>
+    <section className={className}>
       <header
         className={styles.title}
         style={{ fontSize: LEVEL_FONT_SIZE[level] }}

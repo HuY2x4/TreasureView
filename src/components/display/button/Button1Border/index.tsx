@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './index.less';
+import styles from './my.less';
 import BackgroundBorad from '@/pages/comp/components/BackgroundBorad';
 //var()不兼容IE
 interface Props {
@@ -12,8 +12,8 @@ export default class Button1Border extends Component<Props> {
     return (
       <button
         data-text={text}
-        className={`${styles.btn} ${styles['btn-primary']} ${styles['btn-ghost']} ${styles['btn-border-stroke']} ${styles['btn-text-float-up']}`}
-        style={{ '--hue': color }}
+        className={`${styles.btn} ${styles['btn-text-float-up']}`}
+        // style={{ '--hue': color }}
       >
         <div className={styles['btn-borders']}>
           <div className={styles['border-top']}></div>

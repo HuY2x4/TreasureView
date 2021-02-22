@@ -1,4 +1,6 @@
 import { Effect, Model } from 'dva';
+const INIT_PAGE = 'new';
+
 export const PAGE_ROUTE: any = {
   film: '/',
   components: '/components',
@@ -7,7 +9,7 @@ export const PAGE_ROUTE: any = {
 const layoutModel: Model = {
   namespace: 'layout',
   state: {
-    curPage: 'film',
+    curPage: INIT_PAGE,
   },
   effects: {
     *query({ payload }, { call, put }) {},
@@ -30,7 +32,7 @@ const layoutModel: Model = {
       return history.listen(({ pathname }) => {
         // 待优化 - 看的乱
         if (!!pathname) {
-          let cur_page = 'film';
+          let cur_page = INIT_PAGE;
           if (pathname !== '/') {
             Object.keys(PAGE_ROUTE).find((key) => {
               cur_page = 'notFound';

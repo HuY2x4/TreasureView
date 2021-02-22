@@ -2,6 +2,7 @@ import loadable from '@/utils/loadable';
 
 // 基础
 import { FONT_MENU, FONT_REFERENCE } from '../content/basis/font';
+import { XLSX_MENU, XLSX_REFERENCE } from '../content/basis/excel';
 
 export const MENUS = [
   {
@@ -16,10 +17,12 @@ export const MENUS = [
         reference: FONT_REFERENCE,
       },
       {
-        title: '按钮2',
-        key: 'video',
-        path: '?type=video',
-        node: loadable(() => import('../content/media/video')),
+        title: 'Excel',
+        key: 'excel',
+        path: '?type=excel',
+        node: loadable(() => import('../content/basis/excel')),
+        menu: XLSX_MENU,
+        reference: XLSX_REFERENCE,
       },
     ],
   },

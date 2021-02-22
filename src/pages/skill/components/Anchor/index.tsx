@@ -10,6 +10,26 @@ interface Props {
   curKey?: string;
 }
 
+// 获取某一个目录
+export const getMenuItem = (menu: MENU_ITEM[], id: string): MENU_ITEM => {
+  let target = { title: '', id: '' };
+
+  menu.find((val: MENU_ITEM) => {
+    if (val.id === id) {
+      target = val;
+      return true;
+    }
+    if (val.childs) {
+      target = getMenuItem(val.childs, id);
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  return target;
+};
+
 export default function (props: Props) {
   const { data = [], curKey } = props;
 

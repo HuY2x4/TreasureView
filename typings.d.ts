@@ -10,3 +10,4 @@ declare module '*.svg' {
 }
 declare module 'react-loadable';
 declare module '*.scss';
+declare module 'js-xlsx';
