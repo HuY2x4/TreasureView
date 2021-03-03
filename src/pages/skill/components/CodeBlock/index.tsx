@@ -31,17 +31,14 @@ import 'codemirror/addon/selection/active-line';
  */
 interface Props {
   type?: 'html' | 'css' | 'json' | 'js' | 'markdown';
-  children: string;
+  children?: string;
   onChange?: (editor: any, data: any, value: string) => void;
 }
 
 export default function (props: Props) {
-  useEffect(() => {
-    console.log('ss:', clearPreBlock(props.children));
-  });
   let options = {};
 
-  switch (props.type) {
+  switch (props.type || 'js') {
     case 'html':
       options = {
         mode: 'text/html',

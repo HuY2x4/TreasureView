@@ -59,7 +59,7 @@ export default function (props: Props) {
           <Span>
             上标<i style={{ fontVariantPosition: 'super' }}>super</i>
           </Span>
-          <Prompt>只兼容Firefox 34+</Prompt>
+          <Prompt style={{ marginLeft: 15 }}>只兼容Firefox 34+</Prompt>
         </p>
       </Section>
       <Section

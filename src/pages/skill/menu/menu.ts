@@ -6,6 +6,10 @@ import {
   REGULAR_MENU,
   REGULAR_REFERENCE,
 } from '../content/basis/regularExpression';
+import {
+  SCROLLBAR_MENU,
+  SCROLLBAR_REFERENCE,
+} from '../content/basis/scrollbar';
 // 插件
 import { XLSX_MENU, XLSX_REFERENCE } from '../content/plug/excel';
 import {
@@ -32,6 +36,14 @@ export const MENUS = [
         node: loadable(() => import('../content/basis/regularExpression')),
         menu: REGULAR_MENU,
         reference: REGULAR_REFERENCE,
+      },
+      {
+        title: '滚动条',
+        key: 'scrollbar',
+        path: '?type=scrollbar',
+        node: loadable(() => import('../content/basis/scrollbar')),
+        menu: SCROLLBAR_MENU,
+        reference: SCROLLBAR_REFERENCE,
       },
     ],
   },

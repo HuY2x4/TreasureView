@@ -1,4 +1,7 @@
 /************************* 初始样式 *************************/
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
@@ -136,6 +139,12 @@ ul {
   @keyframes @name {
     @frames();
   }
+}
+
+.boxShadow(@attr) {
+  -moz-box-shadow: @attr;
+  -webkit-box-shadow: @attr;
+  box-shadow: @attr; //opera或ie9
 }
 
 /************************* 快捷样式 *************************/

@@ -5,6 +5,7 @@ import Section from './Section';
 import Prompt from './Prompt'; //提示-普通
 import CodeBlock from './CodeBlock'; // 代码块
 import TitleSmall from './TitleSmall'; // 小标题
+import P from './P'; // 小段落
 
 // 布局组件
 import Reference from './Reference';
@@ -19,4 +20,5 @@ export {
   Prompt,
   CodeBlock,
   TitleSmall,
+  P,
 };

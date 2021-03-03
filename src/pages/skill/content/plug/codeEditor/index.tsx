@@ -72,7 +72,9 @@ export default function (props: Props) {
         <Row gutter={20}>
           <Col span={12}>
             <CodeSpan>html</CodeSpan>
-            <Prompt>部分主题色无法正常兼容展示语言应用的高亮颜色</Prompt>
+            <Prompt style={{ marginLeft: 15 }}>
+              部分主题色无法正常兼容展示语言应用的高亮颜色
+            </Prompt>
             <CodeMirror
               value={clearPreBlock(`
                                 <html style="color: green">

@@ -1,5 +1,6 @@
 // 将代码块数据的前缀空格清除
-export function clearPreBlock(data: string) {
+export function clearPreBlock(data: string | undefined) {
+  if (!data) return '';
   // 去除头尾空行
   let data_list = data.split('\n');
   if (data_list[0] == '') data_list.shift();
