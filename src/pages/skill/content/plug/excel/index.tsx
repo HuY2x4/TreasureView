@@ -114,7 +114,7 @@ export default function (props: Props) {
         <button onClick={generateXLSX_aoa}>
           aoa_to_sheet导出Excel-并可在控制台查看数据
         </button>
-        <button onClick={generateXLSX_json}>
+        <button onClick={generateXLSX_json} style={{ marginLeft: 10 }}>
           json_to_sheet导出Excel-在控制台查看数据
         </button>
       </Section>
