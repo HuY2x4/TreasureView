@@ -33,6 +33,7 @@ interface Props {
   type?: 'html' | 'css' | 'json' | 'js' | 'markdown';
   children?: string;
   onChange?: (editor: any, data: any, value: string) => void;
+  style?: any;
 }
 
 export default function (props: Props) {
@@ -84,7 +85,7 @@ export default function (props: Props) {
   }
 
   return (
-    <div className={styles.autoHeight}>
+    <div className={styles.autoHeight} style={props.style || {}}>
       <CodeMirror
         value={clearPreBlock(props.children)}
         options={options}

@@ -20,6 +20,8 @@ import {
   RIGHT_CLICK_MENU,
   RIGHT_CLICK_REFERENCE,
 } from '../content/plug/rightClickMenu';
+// 问题
+import { GITHUB_MENU, GITHUB_REFERENCE } from '../content/problem/github';
 
 export const MENUS = [
   {
@@ -77,6 +79,19 @@ export const MENUS = [
         node: loadable(() => import('../content/plug/rightClickMenu')),
         menu: RIGHT_CLICK_MENU,
         reference: RIGHT_CLICK_REFERENCE,
+      },
+    ],
+  },
+  {
+    type: '问题',
+    childs: [
+      {
+        title: 'Github',
+        key: 'github',
+        path: '?type=github',
+        node: loadable(() => import('../content/problem/github')),
+        menu: GITHUB_MENU,
+        reference: GITHUB_REFERENCE,
       },
     ],
   },
