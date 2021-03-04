@@ -36,16 +36,39 @@
       cursor: pointer;
       font-size: 16px;
       margin-bottom: 10px;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 35%;
+        top: 50%;
+        left: -20px;
+        background-color: @color-theme-bright;
+        .transition(all 0.3s);
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 35%;
+        top: 15%;
+        left: -20px;
+        background-color: @color-theme-bright;
+        .transition(all 0.3s);
+        transform: scaleY(0);
+        transform-origin: bottom;
+      }
+
       &_choose {
-        position: relative;
         &::before {
-          position: absolute;
-          content: '';
-          width: 2px;
-          height: 70%;
-          top: 15%;
-          left: -20px;
-          background-color: @color-theme-bright;
+          transform: scaleY(1);
+        }
+        &::after {
+          transform: scaleY(1);
         }
       }
     }

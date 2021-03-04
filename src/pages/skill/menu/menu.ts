@@ -16,6 +16,10 @@ import {
   CODE_EDITOR_MENU,
   CODE_EDITOR_REFERENCE,
 } from '../content/plug/codeEditor';
+import {
+  RIGHT_CLICK_MENU,
+  RIGHT_CLICK_REFERENCE,
+} from '../content/plug/rightClickMenu';
 
 export const MENUS = [
   {
@@ -65,6 +69,14 @@ export const MENUS = [
         node: loadable(() => import('../content/plug/codeEditor')),
         menu: CODE_EDITOR_MENU,
         reference: CODE_EDITOR_REFERENCE,
+      },
+      {
+        title: '右键菜单',
+        key: 'rightClickMenu',
+        path: '?type=rightClickMenu',
+        node: loadable(() => import('../content/plug/rightClickMenu')),
+        menu: RIGHT_CLICK_MENU,
+        reference: RIGHT_CLICK_REFERENCE,
       },
     ],
   },
