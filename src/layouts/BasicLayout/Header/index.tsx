@@ -102,7 +102,7 @@ class Header extends Component<any> {
             className={styles.logo_wrap}
             onClick={this.handleRouter.bind(this, TOP_MENU['film'].path)}
           >
-            {barStatus == 'opcatiy' ? (
+            {/* {barStatus == 'opcatiy' ? (
               <img
                 src={require('@/assets/layout/logo_white.png')}
                 alt=""
@@ -114,7 +114,7 @@ class Header extends Component<any> {
                 alt=""
                 className={styles.logo}
               />
-            )}
+            )} */}
           </div>
           <ul className={styles.pageList}>
             {Object.keys(TOP_MENU).map((key, index) => {

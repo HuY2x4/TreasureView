@@ -7,8 +7,8 @@ interface Props {
 
 export default function (props: Props) {
   return (
-    <span className={styles.font} style={props.style}>
+    <h4 className={styles.font} style={props.style}>
       {props.children}
-    </span>
+    </h4>
   );
 }

@@ -18,3 +18,8 @@ export function useStateCallback(init: any) {
 
   return [state, handler];
 }
+
+// 生成随机数
+export function getRandomNum() {
+  return new Date().getTime();
+}

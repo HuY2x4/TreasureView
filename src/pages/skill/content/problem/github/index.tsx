@@ -55,38 +55,42 @@ export default function (props: Props) {
           </P>
           <P>
             <TitleSmall>现象:</TitleSmall>
-            <br />
             pull，push都失败，报这个问题
           </P>
           <P>
             <TitleSmall>解决方法:</TitleSmall>
-            <br />
-            参考{' '}
-            <a href="https://zhuanlan.zhihu.com/p/273370216" target="_blank">
-              偶遇OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054
-            </a>
+            <p>
+              参考{' '}
+              <a href="https://zhuanlan.zhihu.com/p/273370216" target="_blank">
+                偶遇OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054
+              </a>
+            </p>
             <CodeBlock style={{ margin: '4px 0' }}>
               {`
-                                如果你已经在git命令行尝试过如下方法，
-                                方法一：用压缩的方式进行下载
-                                
-                                git config --global --add core.compression -1
+                如果你已经在git命令行尝试过如下方法，
+                方法一：用压缩的方式进行下载
+                
+                git config --global --add core.compression -1
 
-                                方法二：.增大缓存大小
-                                524288000表示增至500兆，1048576000表示增至1G
-                                
-                                git config --global http.postBuffer 524288000
+                方法二：.增大缓存大小
+                524288000表示增至500兆，1048576000表示增至1G
+                
+                git config --global http.postBuffer 524288000
 
-                                方法三：利用ssh下载
-                                
-                                git clone git://github.com/XX/XXXX.git
+                方法三：利用ssh下载
+                
+                git clone git://github.com/XX/XXXX.git
 
-                                方法四：安全设置问题
-                                
-                                git config http.sslVerify "false"
-                            `}
+                方法四：安全设置问题
+                
+                git config http.sslVerify "false"
+            `}
             </CodeBlock>
             先采用了方法二，可以pull，但还是不能push，然后采用方法四，第一次不能push，过了一会第二次就ok了
+          </P>
+          <P>
+            <TitleSmall>后续：</TitleSmall>
+            经常出现，多试几次就行了..
           </P>
         </Section>
       </Section>

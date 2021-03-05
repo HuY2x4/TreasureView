@@ -20,6 +20,11 @@ import {
   RIGHT_CLICK_MENU,
   RIGHT_CLICK_REFERENCE,
 } from '../content/plug/rightClickMenu';
+import {
+  TOP_PROGRESS_MENU,
+  TOP_PROGRESS_REFERENCE,
+} from '../content/plug/topProgress';
+
 // 问题
 import { GITHUB_MENU, GITHUB_REFERENCE } from '../content/problem/github';
 
@@ -79,6 +84,14 @@ export const MENUS = [
         node: loadable(() => import('../content/plug/rightClickMenu')),
         menu: RIGHT_CLICK_MENU,
         reference: RIGHT_CLICK_REFERENCE,
+      },
+      {
+        title: '顶部进度条',
+        key: 'topProgress',
+        path: '?type=topProgress',
+        node: loadable(() => import('../content/plug/topProgress')),
+        menu: TOP_PROGRESS_MENU,
+        reference: TOP_PROGRESS_REFERENCE,
       },
     ],
   },

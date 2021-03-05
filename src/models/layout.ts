@@ -1,5 +1,11 @@
 import { Effect, Model } from 'dva';
+
 const INIT_PAGE = 'new';
+
+export interface TOP_PROGRESS {
+  status: 'start' | 'done';
+  oprId: number;
+}
 
 export const PAGE_ROUTE: any = {
   film: '/',
@@ -10,6 +16,10 @@ const layoutModel: Model = {
   namespace: 'layout',
   state: {
     curPage: INIT_PAGE,
+    topProgress: {
+      status: 'start',
+      oprId: 0, // 操作id
+    },
   },
   effects: {
     *query({ payload }, { call, put }) {},
